@@ -1,5 +1,6 @@
 package me.steadykingdev.jwttutorial.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,12 +24,14 @@ public class User {
     private String username;
 
     @Column(name = "password", length = 100)
+    @JsonIgnore
     private String password;
 
     @Column(name = "nickname", length = 50)
     private String nickname;
 
     @Column(name = "activated")
+    @JsonIgnore
     private boolean activated;
 
     @ManyToMany
